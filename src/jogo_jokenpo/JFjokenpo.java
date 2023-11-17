@@ -6,7 +6,7 @@
 
 //arquivo atualizado
 package jogo_jokenpo;
-
+//arquivo 
 /**
  *
  * @author 182200155
