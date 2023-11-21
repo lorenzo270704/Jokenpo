@@ -10,16 +10,10 @@ package jogo_jokenpo;
 
 import java.util.Random;
 
-/**
- *
- * @author 182200155
- */
+
 public class JFjokenpo extends javax.swing.JFrame {
- Random random = new Random();
-        // gerar um número aleatório de 0.0 até 0.99...
-        double number = random.nextDouble();
-        System.out.println(number);
-    
+
+       
     public JFjokenpo() {
         initComponents();
     }
@@ -36,8 +30,7 @@ public class JFjokenpo extends javax.swing.JFrame {
         jBpapel = new javax.swing.JButton();
         jBtesoura = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jTescolha = new javax.swing.JTextField();
 
         jLabel2.setText("jLabel2");
 
@@ -67,18 +60,16 @@ public class JFjokenpo extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Wide Latin", 2, 18)); // NOI18N
         jLabel1.setText("JOKENPÔ");
 
-        jLabel3.setText("jLabel3");
-
-        jLabel5.setText("jLabel5");
+        jTescolha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTescolhaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(260, 260, 260))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -89,22 +80,21 @@ public class JFjokenpo extends javax.swing.JFrame {
                         .addGap(140, 140, 140)
                         .addComponent(jBtesoura))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(324, 324, 324)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5))))
+                        .addGap(248, 248, 248)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(jTescolha, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(58, 58, 58)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel3)
-                .addGap(57, 57, 57)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jTescolha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBpedra)
                     .addComponent(jBpapel)
@@ -127,12 +117,19 @@ public class JFjokenpo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBpapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBpapelActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jBpapelActionPerformed
 
     private void jBpedraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBpedraActionPerformed
         
     }//GEN-LAST:event_jBpedraActionPerformed
+
+    private void jTescolhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTescolhaActionPerformed
+        double randomNumber = Math.random();
+        System.out.println("Tesoura");
+        System.out.println("Papel");
+        System.out.println("Pedra");
+    }//GEN-LAST:event_jTescolhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,9 +172,8 @@ public class JFjokenpo extends javax.swing.JFrame {
     private javax.swing.JButton jBtesoura;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTescolha;
     // End of variables declaration//GEN-END:variables
 }
