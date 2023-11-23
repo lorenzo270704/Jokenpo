@@ -67,15 +67,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                           <Component id="jBpedra" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLescolha" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="jBpapel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                                  <Component id="jBtesoura" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jBpapel" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLcomput" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                          <Component id="jBtesoura" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="111" max="32767" attributes="0"/>
@@ -88,8 +86,8 @@
                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="59" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jLescolha" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="216" max="32767" attributes="0"/>
+                  <Component id="jLcomput" min="-2" pref="22" max="-2" attributes="0"/>
+                  <EmptySpace pref="208" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jBpedra" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jBpapel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -121,6 +119,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Tesoura"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtesouraActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -130,10 +131,7 @@
             <Property name="text" type="java.lang.String" value="JOKENP&#xd4;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLescolha">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel3"/>
-          </Properties>
+        <Component class="javax.swing.JLabel" name="jLcomput">
         </Component>
       </SubComponents>
     </Container>

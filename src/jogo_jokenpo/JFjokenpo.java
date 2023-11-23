@@ -13,12 +13,59 @@ import java.util.Random;
 
 public class JFjokenpo extends javax.swing.JFrame {
 
-       
+       int jogador =0;
+       String escolhacomputador = "";
     public JFjokenpo() {
         initComponents();
+    
+        
+        switch(jogador){
+            case 1:
+                jBpedra.isSelected();
+                break;
+            
+            case 2:
+                jBpapel.isSelected();
+                break;
+                
+            case 3:
+                jBtesoura.isSelected();
+        }
+        
+        int computador =(int) (Math.random()* 3 + 1);
+        
+        switch(computador){
+            case 1:
+                escolhacomputador = "Pedra";
+                break;
+                
+            case 2:
+                escolhacomputador = "Papel";
+                break;
+                
+            case 3:
+                escolhacomputador ="Tesoura";
+                break;
+        }
+        jLcomput.setText(escolhacomputador);
+        
+        if (jogador == computador) {
+            System.out.println("empate");
+        
+        } else {
+            if((jogador == 1 && computador == 3) || (jogador == 2 && computador == 1) || (jogador == 3 && computador == 2)){
+                System.out.println("você ganhou");
+        } else {
+                System.out.println("computador ganhou"); 
+                }
+    }
     }
     
-   
+    
+    
+    
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -30,7 +77,7 @@ public class JFjokenpo extends javax.swing.JFrame {
         jBpapel = new javax.swing.JButton();
         jBtesoura = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLescolha = new javax.swing.JLabel();
+        jLcomput = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -56,11 +103,14 @@ public class JFjokenpo extends javax.swing.JFrame {
         });
 
         jBtesoura.setText("Tesoura");
+        jBtesoura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtesouraActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Wide Latin", 2, 18)); // NOI18N
         jLabel1.setText("JOKENPÔ");
-
-        jLescolha.setText("jLabel3");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -74,13 +124,12 @@ public class JFjokenpo extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addComponent(jBpedra)
-                        .addGap(152, 152, 152)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLescolha)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jBpapel)
-                                .addGap(140, 140, 140)
-                                .addComponent(jBtesoura)))))
+                        .addGap(121, 121, 121)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jBpapel)
+                            .addComponent(jLcomput, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(140, 140, 140)
+                        .addComponent(jBtesoura)))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -89,8 +138,8 @@ public class JFjokenpo extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLescolha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
+                .addComponent(jLcomput, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBpedra)
                     .addComponent(jBpapel)
@@ -113,12 +162,16 @@ public class JFjokenpo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBpapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBpapelActionPerformed
-       
+        jogador =2;
     }//GEN-LAST:event_jBpapelActionPerformed
 
     private void jBpedraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBpedraActionPerformed
-    
+        jogador = 1;
     }//GEN-LAST:event_jBpedraActionPerformed
+
+    private void jBtesouraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtesouraActionPerformed
+        jogador = 3;
+    }//GEN-LAST:event_jBtesouraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,7 +215,7 @@ public class JFjokenpo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLescolha;
+    private javax.swing.JLabel jLcomput;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
